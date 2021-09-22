@@ -23,16 +23,14 @@ Constraints:
 1 ≤ |S| ≤ 105
 */
 
-class Solution{
-    public:
-    int countRev (string s){
+int countRev (string s){
 
-        stack<int>stk;
-        int cnt = 0;
+    stack<int>stk;
+    int cnt = 0;
 
-        if(s.size()%2 == 1) return -1;
+    if(s.size()%2 == 1) return -1;
 
-     for(int i = 0; i < s.size(); i++){
+    for(int i = 0; i < s.size(); i++){
         if(s[i] == '{') stk.push(s[i]);
 
         else if(stk.empty() == true && s[i] == '}'){
@@ -41,10 +39,9 @@ class Solution{
         }
 
         else stk.pop();
-     }   
+    }   
 
-      cnt += stk.size()/2;
+    cnt += stk.size()/2;
 
-      return cnt;
-    }
-};
+return cnt;
+}
