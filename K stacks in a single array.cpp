@@ -48,16 +48,3 @@ bool isEmpty(int sn){
 return false;
 }
 
-int main(){
-
-   int k, n;
-   cin >> k >> n;
-
-   // kstacks.push(k, n);
-   for(int i = 0; i < k; i++){
-      cin >> kstacks.push(k, n);
-   }
-
-return 0;
-}
-
