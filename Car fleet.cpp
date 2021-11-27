@@ -5,7 +5,8 @@ Car Fleet
 
 There are n cars going to the same destination along a one-lane road. The destination is target miles away.
 
-You are given two integer array position and speed, both of length n, where position[i] is the position of the ith car and speed[i] is the speed of the ith car (in miles per hour).
+You are given two integer array position and speed, both of length n, where position[i] is the position of the ith car and speed[i] is the 
+speed of the ith car (in miles per hour).
 
 A car can never pass another car ahead of it, but it can catch up to it, and drive bumper to bumper at the same speed.
 
@@ -43,7 +44,8 @@ All the values of position are unique.
 
 class Solution {
 public:
-//A fleet car is the name given to a vehicle which belongs to a group of two or more cars which together form   the commercial transportation for a business.
+//A fleet car is the name given to a vehicle which belongs to a group of two or more cars which together form the commercial transportation
+// for a business.
     
 //A car can never pass another car ahead of it, but it can catch up to it and drive bumper to bumper at the same speed. |till end|
     int carFleet(int target, vector<int>& pos, vector<int>& speed) {
@@ -79,3 +81,5 @@ public:
     return fleet;
     }
 };
+
+
