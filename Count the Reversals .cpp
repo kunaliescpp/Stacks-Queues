@@ -3,8 +3,9 @@ Problem Link: https://practice.geeksforgeeks.org/problems/count-the-reversals040
 
 Count the Reversals 
 
-Given a string S consisting of only opening and closing curly brackets '{' and '}', find out the minimum number of reversals required to convert the string into a balanced 
-expression.
+Given a string S consisting of only opening and closing curly brackets '{' and '}', find out the minimum number of reversals required to 
+convert the string into a balanced expression.
+
 A reversal means changing '{' to '}' or vice-versa.
 
 Example 1:
@@ -45,3 +46,5 @@ int countRev (string s){
 
 return cnt;
 }
+
+
