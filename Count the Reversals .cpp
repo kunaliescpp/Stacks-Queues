@@ -26,7 +26,7 @@ Constraints:
 
 int countRev (string s){
 
-    stack<int>stk;
+    stack<char>stk;
     int cnt = 0;
 
     if(s.size()%2 == 1) return -1;
