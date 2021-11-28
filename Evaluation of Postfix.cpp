@@ -3,8 +3,10 @@ problem Link: https://practice.geeksforgeeks.org/problems/evaluation-of-postfix-
 
 Evaluation of Postfix Expression 
 
-Given string S representing a postfix expression, the task is to evaluate the expression and find the final value. Operators will only include the basic arithmetic
-operators like *, /, + and -.
+// all the operators used in the expression are put at the end
+
+Given string S representing a postfix expression, the task is to evaluate the expression and find the final value. 
+Operators will only include the basic arithmetic operators like *, /, + and -.
 
 Example 1:
 
@@ -86,3 +88,5 @@ class Solution{
     return str;       
     }
 };
+
+
