@@ -1,3 +1,13 @@
+/*
+Evaluation of prefix expression
+
+Input : -+8/632
+Output : 8
+
+Input : -+7*45+20
+Output : 25
+*/
+
 int solve(int num1, int num2, char opr){
     
     if(opr == '+') return num1 + num2;
@@ -26,4 +36,5 @@ int evaluationofPrefix(string &expression) {
     }   
 return stk.top();
 }
+
 
