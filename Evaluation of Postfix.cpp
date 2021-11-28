@@ -3,7 +3,7 @@ problem Link: https://practice.geeksforgeeks.org/problems/evaluation-of-postfix-
 
 Evaluation of Postfix Expression 
 
-// all the operators used in the expression are put at the end
+// all the operators used in the expression are put at the end (R->L)
 
 Given string S representing a postfix expression, the task is to evaluate the expression and find the final value. 
 Operators will only include the basic arithmetic operators like *, /, + and -.
