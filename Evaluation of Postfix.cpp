@@ -20,65 +20,34 @@ Output: -3
 class Solution{
     public:
     
-    //Function to return precedence of operators
-    int prec(char c) {
-       
-        if(c == '^') return 3;
-        else if(c == '/' || c=='*') return 2;
-        else if(c == '+' || c == '-') return 1;
-        else return -1;
-    }
-
-
-    string infixToPostfix(string s){
+    int solve(int num1, int num2, char opr){
         
-        stack<char> stk;
+        if(opr == '+') return num2 + num1;
+        else if (opr == '-') return num2 - num1;
+        else if(opr == '*') return num2 * num1;
+        else if(opr == '/') return num2 / num1;
+        
+    return -1;
+    }
+    
+    int evaluatePostfix(string s){
+        
+        stack<int> stk;
         string str;
         for(int i = 0; i < s.size(); i++){
             
-            if((s[i] >= 'a' && s[i] <= 'z') || (s[i] >= 'A' && s[i] <= 'Z') || (s[i] >= '0' && s[i] <= '9')){
-                  str += s[i];
+            if(s[i] >= '0' && s[i] <= '9'){
+                stk.push(s[i]- '0');
+            } else{ // operator
+                int op1 = stk.top(); stk.pop();
+                int op2 = stk.top(); stk.pop();
+                int res = solve(op1, op2, s[i]);
+                
+                stk.push(res);
             }
-            
-            else if(s[i] == '(') stk.push(s[i]);
-            
-            else if(s[i] == ')'){
-                while(stk.top() != '('){
-                    str += stk.top();
-                    stk.pop();
-                }
-                stk.pop();
-            }
-            
-            else{ // s[i] == operator
-                if(stk.empty() == true){
-                    stk.push(s[i]);
-                } else{
-                    if(prec(s[i]) > prec(stk.top())){
-                        stk.push(s[i]);
-                    }
-                    else if(prec(s[i]) < prec(stk.top())){
-                        while( !stk.empty() && prec(s[i]) < prec(stk.top())){
-                            str += stk.top();
-                            stk.pop();
-                        }
-                        stk.push(s[i]);
-                    }
-                    else{ // equal precedence -> use associativity
-                        str += stk.top();
-                        stk.pop();
-                        stk.push(s[i]);
-                    }
-                }
-            }
-        }
+        }   
     
-        while(stk.empty() == false){
-                str += stk.top();
-                stk.pop();
-        }
-     
-    return str;       
+    return stk.top();
     }
 };
 
