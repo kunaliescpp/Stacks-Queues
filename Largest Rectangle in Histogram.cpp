@@ -27,9 +27,9 @@ class Solution {
 public:
     // Time Complexity : O(N);
     
-    //Approach : step 1. every element is assumed as smallest block and check in the left side , we want greater and equal element on the left side, then only we make rectangle
-    //and maximize the sum. So we multiply the sum after knowing the breadth (by smallest min. on left also maintaing continuity on left i.e. left is left is always smaller, 
-    //otherwise we break cotinuity) on the left side 
+    //Approach : step 1. every element is assumed as smallest block and check in the left side , we want greater and equal element on the left side, 
+    // then only we make rectangle and maximize the sum. So we multiply the sum after knowing the breadth (by smallest min. on left also maintaing 
+    //continuity on left (i.e. left is always smaller, otherwise we break cotinuity) on the left side 
     
     //step 2 : similarly check on the right side of current element.
     
