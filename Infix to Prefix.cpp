@@ -1,3 +1,16 @@
+    /*
+    Problem link : https://www.geeksforgeeks.org/convert-infix-prefix-notation/
+    
+    Infix to prefix notation
+    
+    Examples : 
+    Input : A * B + C / D1
+    Output : + * A B/ C D 
+
+    Input : (A - B/C) * (A/K-L)
+    Output : *-A/BC-/AKL
+    */
+    
     //Function to return precedence of operators
     int prec(char c) {
        
@@ -6,7 +19,6 @@
         else if(c == '+' || c == '-') return 1;
         else return -1;
     }
-
 
     string infixToPrefix(string s){
         
