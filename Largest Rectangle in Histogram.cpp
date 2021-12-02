@@ -27,13 +27,7 @@ class Solution {
 public:
     // Time Complexity : O(N);
     
-    //Approach : step 1. every element is assumed as smallest block and check in the left side , we want greater and equal element on the left side, 
-    // then only we make rectangle and maximize the sum. So we multiply the sum after knowing the breadth (by smallest min. on left also maintaing 
-    //continuity on left (i.e. left is always smaller, otherwise we break cotinuity) on the left side 
-    
-    //step 2 : similarly check on the right side of current element.
-    
-    // example used : heights[6, 2, 5, 4, 1, 5, 6]
+    // stk.top() contains min element
     int largestRectangleArea(vector<int>& heights) {
         
         stack<int>stk;  
@@ -43,12 +37,12 @@ public:
         for(int i = 0; i < heights.size(); i++){
             
             int curr = heights[i];
-            while(!stk.empty() && heights[stk.top()] >= heights[i]){  //stack ke top pe always left min of curr
-                                                                      //element
+            while(!stk.empty() && heights[stk.top()] >= heights[i]){  
+             
                 int f = stk.top();                  
                 stk.pop();
-                curr = heights[f]*(stk.empty() ? i : (i-stk.top()-1));   
-                // i-stk.top()-1 = breadth (curr-1 -> left min.)
+                curr = heights[f]*(stk.empty() ? i-1+1 : (i-stk.top()-1));   
+          
                 area = max(area, curr);
             }
             stk.push(i);
@@ -58,9 +52,9 @@ public:
            
            int f = stk.top();
            stk.pop();
-           int curr = heights[f]*(stk.empty() ? n : (n-stk.top()-1));       //curious last case - multiply last 
-           area = max(area, curr);                                      //stack with the total no. of elements
-       }                                                                // because it is the smallest stack
+           int curr = heights[f]*(stk.empty() ? n : (n-stk.top()-1));      
+           area = max(area, curr);                                      
+       }                                                               
     
     return area;
     }
