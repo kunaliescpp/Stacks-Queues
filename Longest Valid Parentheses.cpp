@@ -44,15 +44,17 @@ public:
             
             else{
                 stk.pop();
+                
                 if(stk.empty()){              // if first char is ')', then stk's top is 0
                     stk.push(i);
+                } else{
+                    cnt = max(cnt, i-stk.top());
                 }
-                
-                else cnt = max(cnt, i-stk.top());
             } 
-        
         }
     
    return cnt;
     }
 };
+
+
