@@ -41,8 +41,9 @@ public:
              
                 int f = stk.top();                  
                 stk.pop();
+                // Remove next smaller and previous smaller
                 curr = heights[f]*(stk.empty() ? i-1+1 : (i-stk.top()-1));   
-          
+                
                 area = max(area, curr);
             }
             stk.push(i);
