@@ -20,11 +20,11 @@ class Queue{
 };
 
 bool isFull(){
-  return (cap == size);
+  return (cap == curr_size);
 }
 
 bool isEmpty(){
-  return (size == 0);
+  return (curr_size == 0);
 }
 
 int getFront(){
@@ -34,7 +34,7 @@ int getFront(){
 
 int getRear(){
   if(isEmpty()) return -1;
-  else return (front + size - 1)% cap;
+  else return (front + curr_size - 1)% cap;
 }
 
 void enque(){
@@ -43,14 +43,14 @@ void enque(){
   int rear = getRear();
   rear = (rear + 1)% cap;
   arr[rear] = x;
-  size++;
+  curr_size++;
 }
 
 void deque(){
   if(isEmpty()) return;
   
   front = (front + 1)% cap;
-  size--;
+  curr_size--;
 }
 
 
