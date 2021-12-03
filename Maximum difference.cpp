@@ -58,11 +58,12 @@ class Solution{
         
         reverse(arr, arr+n);
         leftSmaller(arr, right, n);
-        // reverse(right, right+n);
+        
+        reverse(right, right+n);
     
         int maxi = -1e9;
         for(int i = 0; i < n; i++){
-            maxi = max(maxi, abs(left[i]-right[n-1-i]));
+            maxi = max(maxi, abs(left[i]-right[i]));
         }
    
     return maxi;
