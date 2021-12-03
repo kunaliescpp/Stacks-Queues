@@ -10,12 +10,12 @@ class Queue{
   public: 
    
   int *arr;
-  int front, cap, size;
+  int front, cap, curr_size;
   Queue(int c){
     arr = new int [c];
     cap = c;
     front = 0;
-    size = 0;
+    curr_size = 0;
   }   
 };
 
