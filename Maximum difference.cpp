@@ -3,7 +3,9 @@ Problem Link: https://practice.geeksforgeeks.org/problems/maximum-difference/1
 
 Maximum Difference 
 
-Given array A[] of integers, the task is to complete the function findMaxDiff which finds the maximum absolute difference between nearest left and right smaller element of every element in array.If the element is the leftmost element, nearest smaller element on left side is considered as 0. Similarly if the element is the rightmost elements, smaller element on right side is considered as 0.
+Given array A[] of integers, the task is to complete the function findMaxDiff which finds the maximum absolute difference between 
+nearest left and right smaller element of every element in array.If the element is the leftmost element, nearest smaller element 
+on left side is considered as 0. Similarly if the element is the rightmost elements, smaller element on right side is considered as 0.
 
 Examples:
 
@@ -62,7 +64,7 @@ class Solution{
         for(int i = 0; i < n; i++){
             maxi = max(maxi, abs(left[i]-right[n-1-i]));
         }
-    
+   
     return maxi;
     }
 };
