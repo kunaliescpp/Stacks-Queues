@@ -39,9 +39,9 @@ class Solution{
             if(s[i] >= '0' && s[i] <= '9'){
                 stk.push(s[i]- '0');
             } else{ // operator
-                int c1 = stk.top(); stk.pop();
-                int c2 = stk.top(); stk.pop();
-                int res = solve(c1, c2, s[i]);
+                int num1 = stk.top(); stk.pop();
+                int num2 = stk.top(); stk.pop();
+                int res = solve(num1, num2, s[i]);
                 
                 stk.push(res);
             }
