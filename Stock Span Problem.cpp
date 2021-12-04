@@ -46,6 +46,7 @@ class Solution{
                stk.pop();
            }
        
+           // stk.top = prv greater element
            int span = (stk.empty() ? i+1 : (i-stk.top()) );
            v.push_back(span);
            
