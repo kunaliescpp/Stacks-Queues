@@ -19,11 +19,10 @@ class stack{
     
     void pop(){
         if(head == NULL) return false;
-        
+ 
         Node* curr = head;
         head = curr->next;
         curr->next = NULL;
-        
     return true;
     }
 };
